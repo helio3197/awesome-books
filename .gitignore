@@ -1,0 +1,7 @@
+node_modules
+.lighthouseci*
+hint-report*
+.stylelintrc.json
+package-lock.json
+.eslintrc.json
+.hintrc
