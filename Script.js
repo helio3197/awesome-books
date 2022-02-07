@@ -2,19 +2,36 @@ const bookSubmit = document.querySelector('#book-submit');
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 let library = [];
+if (localStorage.getItem('library') != null) {
+  library = JSON.parse(localStorage.getItem('library'));
+}
+const bookWrapper = document.querySelector('#book-wrapper');
 
-library = JSON.parse(localStorage.getItem('library'));
+function removeBooks(e) {
+  const { id } = e.currentTarget;
+  document.getElementById(`book-${+id}`).remove();
+  library.splice(id - 1, id - 1);
+  localStorage.setItem('library', JSON.stringify(library));
+}
 
-library.forEach((book, index) => {
-  const bookWrapper = document.querySelector('#book-wrapper');
-  const div = document.createElement('div');
-  div.innerHTML = `
+function createBooks() {
+  library.forEach((book, index) => {
+    const div = document.createElement('div');
+    div.id = `book-${index + 1}`;
+    div.innerHTML = `
   <h2>${book.title}</h2>
   <h3>${book.author}</h3>
-  <button type="button" class="remove-book" id="${index+1}">Remove</button>
+  <button type="button" class="remove-book" id="${index + 1}">Remove</button>
+  <hr>
   `;
-  bookWrapper.appendChild(div);
-});
+    bookWrapper.appendChild(div);
+
+    const buttons = document.getElementById(`${index + 1}`);
+    buttons.addEventListener('click', removeBooks);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', createBooks);
 
 function addBook(e) {
   e.preventDefault();
@@ -27,17 +44,11 @@ function addBook(e) {
   library.push(book);
   localStorage.setItem('library', JSON.stringify(library));
 
-  library.forEach((book, index) => {
-    const bookWrapper = document.querySelector('#book-wrapper');
-    const div = document.createElement('div');
-    div.innerHTML = `
-    <h2>${book.title}</h2>
-    <h3>${book.author}</h3>
-    <button type="button" class="remove-book" id="${index+1}">Remove</button>
-    `;
-    bookWrapper.appendChild(div);
-  });
+  bookWrapper.innerHTML = '';
+  createBooks();
+
+  title.value = '';
+  author.value = '';
 }
 
 bookSubmit.addEventListener('submit', addBook);
-
