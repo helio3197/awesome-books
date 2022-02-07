@@ -2,20 +2,20 @@
 
 # Awesome Books
 
-> This is my personal portfolio
+> This is a project that compiles Awesome books
 
 ![screenshot](./screenshot.png)
 
-In this webpage, I have gathered all the projects I've done so far.
+In this webpage, you can store any book's name and author into the local storage.
 
 ## Built With
 
 - HTML
-- CSS
+- JavaScript
 
 ## Live Page
 
-[Page Link](https://helio3197.github.io/portfolio)
+[Page Link](https://helio3197.github.io/awesome-books)
 
 
 ## Getting Started
@@ -34,7 +34,7 @@ To get a local copy up and running follow these simple steps.
 
 - Use this command to get a copy:
 ```
-git clone git@github.com:helio3197/portfolio.git
+git clone git@github.com:helio3197/awesome-books.git
 ```
 ### Usage
 
@@ -51,9 +51,9 @@ git clone git@github.com:helio3197/portfolio.git
 
 👤 **Joaquin Garrido**
 
-- GitHub: [@ferminmu26](https://github.com/ferminmu26)
-- Twitter: [@ferminmu26](https://twitter.com/ferminmu26)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/mejfa)
+- GitHub: [@Kakalanp](https://github.com/Kakalanp)
+- Twitter: [@LeccaJoaquin](https://twitter.com/LeccaJoaquin)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/joaquín-garrido-lecca-zanetti-623583204)
 
 
 ## 🤝 Contributing
@@ -69,7 +69,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Thanks to Microverse for the guidelines.
-- Thanks to Miguel Fermín for collaborating on the project.
+- Thanks to Joaquín Garrido for collaborating on the project.
 
 
 ## 📝 License
