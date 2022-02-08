@@ -7,11 +7,24 @@ if (localStorage.getItem('library') != null) {
 }
 const bookWrapper = document.querySelector('#book-wrapper');
 
+class book {
+  constructor (title, author) {
+    this.title = title;
+    this.author = author;
+  }
+
+  addBook () {
+    library.push({title: this.title, author: this.author});
+    localStorage.setItem('library', JSON.stringify(library));
+  }
+}
+
 function removeBooks(e) {
   const { id } = e.currentTarget;
-  document.getElementById(`book-${+id}`).remove();
-  library.splice(id - 1, id - 1);
+  library.splice(id - 1, 1);
   localStorage.setItem('library', JSON.stringify(library));
+  bookWrapper.innerHTML = '';
+  createBooks();
 }
 
 function createBooks() {
@@ -52,3 +65,11 @@ function addBook(e) {
 }
 
 bookSubmit.addEventListener('submit', addBook);
+
+bookSubmit.addEventListener('submit', () => {
+  e.preventDefault();
+  let someBook = new book (title.value, author.value);
+
+  someBook.addbook();
+  createBooks();
+});
