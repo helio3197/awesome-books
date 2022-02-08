@@ -11,6 +11,10 @@ label > * {
   padding: 4px;
 }
 
+.background {
+  background-color: lightgray;
+}
+
 #book-wrapper {
   border: 3px solid black;
   align-self: stretch;
@@ -22,6 +26,7 @@ label > * {
   padding: 4px 10px;
   margin: 0;
   max-width: calc(100% - 20px);
+  gap: 12px;
 }
 
 #book-wrapper h2 {

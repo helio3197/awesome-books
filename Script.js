@@ -47,10 +47,16 @@ function createBooks() {
   const bookCollection = library.map((bookData) => new Book(
     bookData.title, bookData.author, bookData.id,
   ));
+  
+  let number = 0;
 
   bookWrapper.innerHTML = '';
   bookCollection.forEach((book) => {
     const div = document.createElement('div');
+    if (number % 2 === 0) {
+      div.className = 'background';
+    }
+    number = number + 1;
     div.id = `book-${book.id}`;
     div.innerHTML = `
     <h2>${book.title}</h2>
