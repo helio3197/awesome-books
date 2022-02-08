@@ -47,7 +47,7 @@ function createBooks() {
   const bookCollection = library.map((bookData) => new Book(
     bookData.title, bookData.author, bookData.id,
   ));
-  
+
   let number = 0;
 
   bookWrapper.innerHTML = '';
@@ -56,7 +56,7 @@ function createBooks() {
     if (number % 2 === 0) {
       div.className = 'background';
     }
-    number = number + 1;
+    number += 1;
     div.id = `book-${book.id}`;
     div.innerHTML = `
     <h2>${book.title}</h2>
