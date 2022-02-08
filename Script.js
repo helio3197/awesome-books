@@ -7,6 +7,19 @@ if (localStorage.getItem('library') != null) {
 }
 const bookWrapper = document.querySelector('#book-wrapper');
 
+function saveInputs() {
+  let formObj = {
+    titleField: title.value,
+    authorField: author.value,
+  };
+
+  localStorage.setItem('formBook', JSON.stringify(formObj));
+}
+
+title.addEventListener('input', saveInputs);
+
+author.addEventListener('input', saveInputs);
+
 class book {
   constructor (title, author, id) {
     this.title = title;
@@ -25,52 +38,54 @@ class book {
         lib.splice(i, 1);
       }
     })
+    localStorage.setItem('library', JSON.stringify(library));
     createBooks();
   }
-
-  /*
-  removeBook (e) {
-    const id = e.currentTarget.id
-    library.splice(id - 1, 1);
-    localStorage.setItem('library', JSON.stringify(library));
-    bookWrapper.innerHTML = '';
-    createBooks(this);  
-  }*/
 }
 
 function createBooks() {
-
+  const bookCollection = library.map((bookData) => {
+    return new book (bookData.title, bookData.author, bookData.id);
+  });
   bookWrapper.innerHTML = '';
-  library.forEach((book, index) => {
+  bookCollection.forEach((book, index) => {
     const div = document.createElement('div');
     div.id = `book-${book.id}`;
     div.innerHTML = `
     <h2>${book.title}</h2>
     <h3>${book.author}</h3>
-    <button type="button" class="remove-book" id="${index + 1}">Remove</button>
+    <button type="button" class="remove-book">Remove</button>
     <hr>
     `;
     bookWrapper.appendChild(div);
 
-    const buttons = document.getElementById(`${index + 1}`);
-    buttons.addEventListener('click', book.removeBook);
+    const buttons = document.querySelector(`#book-${book.id} button`);
+    buttons.addEventListener('click', () => {
+      book.removeBook();
+    });
   });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-
+  createBooks();
+  if (localStorage.getItem('formBook')) {
+    const formObj = JSON.parse(localStorage.getItem('formBook'));
+    title.value = formObj.titleField;
+    author.value = formObj.authorField;
+  };
 });
 
 let bookId = 0;
 if (library.length !== 0) {
-  bookId = library[-1].id;
+  bookId = library.at(-1).id;
 } 
 
 bookSubmit.addEventListener('submit', (e) => {
   e.preventDefault();
   bookId = bookId + 1;
   let someBook = new book (title.value, author.value, bookId);
-
   someBook.addBook(someBook);
   createBooks();
+  title.value = '';
+  author.value = '';
 });
