@@ -76,6 +76,12 @@ function createBooks() {
   });
 }
 
+function switchDisplay() {
+  bookList.classList.add('not-display');
+  addBook.classList.add('not-display');
+  contact.classList.add('not-display');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   createBooks();
   if (localStorage.getItem('formBook')) {
@@ -83,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     title.value = formObj.titleField;
     author.value = formObj.authorField;
   }
-  switchDisplay ()
+  switchDisplay();
   bookList.classList.remove('not-display');
 });
 
@@ -103,27 +109,21 @@ bookSubmit.addEventListener('submit', (e) => {
   saveInputs();
 });
 
-function switchDisplay () { 
-  bookList.classList.add('not-display');
-  addBook.classList.add('not-display');
-  contact.classList.add('not-display');
-}
-
 const bookListNav = document.querySelector('[href="#book-list"]');
 const addBookNav = document.querySelector('[href="#add-book"]');
 const contactNav = document.querySelector('[href="#contact"]');
 
 bookListNav.addEventListener('click', () => {
-  switchDisplay ();
+  switchDisplay();
   bookList.classList.remove('not-display');
 });
 
 addBookNav.addEventListener('click', () => {
-  switchDisplay ();
+  switchDisplay();
   addBook.classList.remove('not-display');
 });
 
 contactNav.addEventListener('click', () => {
-  switchDisplay ();
+  switchDisplay();
   contact.classList.remove('not-display');
 });
