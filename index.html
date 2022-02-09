@@ -10,10 +10,23 @@
   <title>Awesome Books</title>
 </head>
 <body>
-  <h1>All awesome Books</h1>
-  <div id="book-wrapper">
-  </div>
-  <span></span>
+  <nav>
+    <h1>Awesome Books</h1>
+    <ul>
+      <li><a href="#book-list">Book list</a></li>
+      <li><a href="#add-book">Add a book</a></li>
+      <li><a href="#contact">Contact us!</a></li>
+    </ul>
+  </nav>
+
+  <section class="list" id="book-list">
+    <h1>All awesome Books</h1>
+    <div id="book-wrapper">
+
+    </div>
+  </section>
+
+  <section class="add-book" id="add-book">
   <form id="book-submit">
     <h2>Add a new book</h2>
     <label for="title">
@@ -24,6 +37,30 @@
     </label>
     <input type="submit" value="Add">
   </form>
+  </section>
+
+  <section class="contact" id="contact">
+    <h1>Contact information</h1>
+    <div class="contact-info">
+      <h2>Kenny</h2>
+      <p>Do you have any question or you just want to say "hello"? You can reach out to me in the following ways:</p>
+      <ul>
+        <li><a href="mailto:">Mail me</a></li>
+        <li><a href="">@helio3197</a></li>
+        <li><a href="">Kenny Salazar</a></li>
+      </ul>
+    </div>
+    <div class="contact-info">
+      <h2>Joaquín</h2>
+      <p>Do you have any question or you just want to say "hello"? You can reach out to me in the following ways:</p>
+      <ul>
+        <li><a href="mailto:jgarridoleccazanetti@gmail.com">Mail me!</a></li>
+        <li><a href="https://github.com/Kakalanp">@Kakalanp</a></li>
+        <li><a href="https://www.linkedin.com/in/joaquín-garrido-lecca-zanetti-623583204/">Joaquín Garrido Lecca</a></li>
+        <li><a href="https://twitter.com/LeccaJoaquin">@LeccaJoaquin</a></li>
+      </ul>
+    </div>
+  </section>
 
   <script src="./Script.js"></script>
 </body>
