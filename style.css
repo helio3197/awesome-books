@@ -4,6 +4,11 @@ body {
   align-items: center;
   font-family: 'Courier New', Courier, monospace;
   margin: 0;
+  background-color: pink;
+  background-image: linear-gradient(pink, purple);
+  background-repeat: no-repeat;
+  background-size: 100vw 100%;
+  min-height: 100vh;
 }
 
 nav {
@@ -14,59 +19,77 @@ nav {
   box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
   align-items: center;
   position: fixed;
-  background: white;
+  background-color: pink;
   width: 100%;
   box-sizing: border-box;
+}
+
+@supports (backdrop-filter: blur()) {
+  nav {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+  }
 }
 
 nav > h1 {
   margin: 0;
 }
 
-nav > ul {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  gap: 12px;
-  align-items: center;
-}
-
-nav > ul > * {
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 4px;
-}
-
-nav a {
-  display: block;
-  height: 15px;
-}
-
-a {
-  text-decoration: none;
-}
-
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-section {
-  margin-top: 51px;
+nav > ul {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
 }
 
 label > * {
   width: 100%;
   box-sizing: border-box;
   padding: 4px;
+  border-radius: 10px;
+}
+
+nav > ul > * {
+  border: 2px solid purple;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+nav a {
+  display: block;
+  min-height: 15px;
+}
+
+section {
+  margin-top: 88px;
+  padding: 0 24px;
+  max-width: calc(100% - 48px);
 }
 
 .background {
-  background-color: lightgray;
+  background-color: rgba(0, 0, 0, 0.09);
 }
 
 #book-wrapper {
   border: 3px solid black;
   align-self: stretch;
+  overflow: auto;
+}
+
+.contact-info > * {
+  margin: 0;
+  padding: 10px;
 }
 
 #book-wrapper > * {
@@ -91,7 +114,11 @@ label > * {
 }
 
 button {
+  font-weight: bold;
   margin-left: auto;
+  border: 2px solid rgba(255, 192, 203, 0.5);
+  border-radius: 5px;
+  background-color: rgba(128, 0, 128, 0.2);
 }
 
 span {
@@ -116,8 +143,30 @@ span {
 
 #book-submit [type="submit"] {
   align-self: flex-end;
+  font-weight: bold;
+  margin-left: auto;
+  border: 2px solid rgba(255, 192, 203, 0.5);
+  border-radius: 5px;
+  background-color: rgba(128, 0, 128, 0.2);
+  padding: 4px 8px;
+}
+
+#contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#contact h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.contact-info {
+  margin-top: 30px;
+  width: 45%;
 }
 
 .not-display {
-  display: none;
+  display: none !important;
 }
