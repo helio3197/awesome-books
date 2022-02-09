@@ -97,7 +97,7 @@ section {
   align-items: center;
   padding: 4px 10px;
   margin: 0;
-  max-width: calc(100% - 20px);
+  min-width: 290px;
   gap: 12px;
 }
 
