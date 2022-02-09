@@ -10,10 +10,23 @@
   <title>Awesome Books</title>
 </head>
 <body>
-  <h1>All awesome Books</h1>
-  <div id="book-wrapper">
-  </div>
-  <span></span>
+  <nav>
+    <h1>Awesome Books</h1>
+    <ul>
+      <li><a href="#book-list">Book list</a></li>
+      <li><a href="#add-book">Add a book</a></li>
+      <li><a href="#contact">Contact us!</a></li>
+    </ul>
+  </nav>
+
+  <section class="list" id="book-list">
+    <h1>All awesome Books</h1>
+    <div id="book-wrapper">
+
+    </div>
+  </section>
+
+  <section class="add-book" id="add-book">
   <form id="book-submit">
     <h2>Add a new book</h2>
     <label for="title">
@@ -24,6 +37,30 @@
     </label>
     <input type="submit" value="Add">
   </form>
+  </section>
+
+  <section class="contact" id="contact">
+    <h1>Contact information</h1>
+    <div class="contact-info">
+      <h2>Kenny</h2>
+      <p>Do you have any question or you just want to say "hello"? You can reach out to me in the following ways:</p>
+      <ul>
+        <li><a rel="noopener noreferrer" href="mailto:kennysalazar3197@gmail.com" target="_blank">Mail me</a></li>
+        <li><a rel="noopener noreferrer" href="https://github.com/helio3197" target="_blank">@helio3197</a></li>
+        <li><a rel="noopener noreferrer" href="https://www.linkedin.com/in/kenny-salazar-1a1687110/" target="_blank">Kenny Salazar</a></li>
+      </ul>
+    </div>
+    <div class="contact-info">
+      <h2>Joaquín</h2>
+      <p>Do you have any question or you just want to say "hello"? You can reach out to me in the following ways:</p>
+      <ul>
+        <li><a href="mailto:jgarridoleccazanetti@gmail.com" target="_blank">Mail me!</a></li>
+        <li><a rel="noopener noreferrer" href="https://github.com/Kakalanp" target="_blank">@Kakalanp</a></li>
+        <li><a rel="noopener noreferrer" href="https://www.linkedin.com/in/joaquín-garrido-lecca-zanetti-623583204/" target="_blank">Joaquín Garrido Lecca</a></li>
+        <li><a rel="noopener noreferrer" href="https://twitter.com/LeccaJoaquin" target="_blank">@LeccaJoaquin</a></li>
+      </ul>
+    </div>
+  </section>
 
   <script src="./Script.js"></script>
 </body>

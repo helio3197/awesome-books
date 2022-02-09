@@ -1,6 +1,9 @@
 const bookSubmit = document.querySelector('#book-submit');
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
+const bookList = document.getElementById('book-list');
+const addBook = document.getElementById('add-book');
+const contact = document.getElementById('contact');
 let library = [];
 if (localStorage.getItem('library') != null) {
   library = JSON.parse(localStorage.getItem('library'));
@@ -73,6 +76,12 @@ function createBooks() {
   });
 }
 
+function switchDisplay() {
+  bookList.classList.add('not-display');
+  addBook.classList.add('not-display');
+  contact.classList.add('not-display');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   createBooks();
   if (localStorage.getItem('formBook')) {
@@ -80,6 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
     title.value = formObj.titleField;
     author.value = formObj.authorField;
   }
+  switchDisplay();
+  bookList.classList.remove('not-display');
 });
 
 let bookId = 0;
@@ -96,4 +107,23 @@ bookSubmit.addEventListener('submit', (e) => {
   title.value = '';
   author.value = '';
   saveInputs();
+});
+
+const bookListNav = document.querySelector('[href="#book-list"]');
+const addBookNav = document.querySelector('[href="#add-book"]');
+const contactNav = document.querySelector('[href="#contact"]');
+
+bookListNav.addEventListener('click', () => {
+  switchDisplay();
+  bookList.classList.remove('not-display');
+});
+
+addBookNav.addEventListener('click', () => {
+  switchDisplay();
+  addBook.classList.remove('not-display');
+});
+
+contactNav.addEventListener('click', () => {
+  switchDisplay();
+  contact.classList.remove('not-display');
 });
