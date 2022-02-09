@@ -3,6 +3,55 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+}
+
+nav {
+  align-self: stretch;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 24px;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+  align-items: center;
+  position: fixed;
+  background: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+nav > h1 {
+  margin: 0;
+}
+
+nav > ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 12px;
+  align-items: center;
+}
+
+nav > ul > * {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+nav a {
+  display: block;
+  height: 15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+section {
+  margin-top: 51px;
 }
 
 label > * {
@@ -67,4 +116,8 @@ span {
 
 #book-submit [type="submit"] {
   align-self: flex-end;
+}
+
+.not-display {
+  display: none;
 }
