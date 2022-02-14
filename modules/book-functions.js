@@ -20,7 +20,7 @@ class Book {
   }
 }
 
-function createBooks(library, bookWrapper) {
+const createBooks = (library, bookWrapper) => {
   const bookCollection = library.map((bookData) => new Book(
     bookData.title, bookData.author, bookData.id,
   ));
@@ -49,6 +49,6 @@ function createBooks(library, bookWrapper) {
       createBooks(library, bookWrapper);
     });
   });
-}
+};
 
 export { Book, createBooks };
