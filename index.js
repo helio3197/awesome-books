@@ -1,7 +1,10 @@
+import { DateTime } from './modules/luxon.js';
 import { Book, createBooks } from './modules/book-functions.js';
 import saveInputs from './modules/save-form-data.js';
 import switchDisplay from './modules/switch-sections.js';
 
+const date = DateTime.now().c;
+const currentDate = document.getElementById('current-date');
 const bookSubmit = document.querySelector('#book-submit');
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
@@ -13,6 +16,8 @@ let library = [];
 if (localStorage.getItem('library') != null) {
   library = JSON.parse(localStorage.getItem('library'));
 }
+
+currentDate.innerHTML = `Current date is: ${date.year}/${date.month}/${date.day}`;
 
 title.addEventListener('input', () => {
   saveInputs(title, author);

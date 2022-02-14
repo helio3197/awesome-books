@@ -11,6 +11,15 @@ body {
   min-height: 100vh;
 }
 
+.nav {
+  position: fixed;
+  width: 100%;
+}
+
+#current-date {
+  padding-left: 1%;
+}
+
 nav {
   align-self: stretch;
   display: flex;
@@ -18,7 +27,6 @@ nav {
   padding: 12px 1%;
   box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
   align-items: center;
-  position: fixed;
   background-color: pink;
   width: 100%;
   box-sizing: border-box;
