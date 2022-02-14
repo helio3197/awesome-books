@@ -11,6 +11,7 @@ In this webpage, you can store any book's name and author into the local storage
 ## Built With
 
 - HTML
+- CSS
 - JavaScript
 
 ## Live Page

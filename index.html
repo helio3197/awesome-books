@@ -5,19 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
 
   <title>Awesome Books</title>
 </head>
 <body>
-  <nav>
-    <h1>Awesome Books</h1>
-    <ul>
-      <li><a href="#book-list">Book list</a></li>
-      <li><a href="#add-book">Add a book</a></li>
-      <li><a href="#contact">Contact us!</a></li>
-    </ul>
-  </nav>
+  <div class="nav">
+    <nav>
+      <h1>Awesome Books</h1>
+      <ul>
+        <li><a href="#book-list">Book list</a></li>
+        <li><a href="#add-book">Add a book</a></li>
+        <li><a href="#contact">Contact us!</a></li>
+      </ul>
+    </nav>
+    <div id="current-date"></div>
+  </div>
 
   <section class="list" id="book-list">
     <h1>All awesome Books</h1>
@@ -62,6 +65,6 @@
     </div>
   </section>
 
-  <script src="./Script.js"></script>
+  <script type="module" src="./index.js"></script>
 </body>
 </html>

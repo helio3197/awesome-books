@@ -11,14 +11,22 @@ body {
   min-height: 100vh;
 }
 
+.nav {
+  position: fixed;
+  width: 100%;
+}
+
+#current-date {
+  padding-left: 1%;
+}
+
 nav {
   align-self: stretch;
   display: flex;
   justify-content: space-between;
-  padding: 12px 24px;
+  padding: 12px 1%;
   box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
   align-items: center;
-  position: fixed;
   background-color: pink;
   width: 100%;
   box-sizing: border-box;
@@ -73,8 +81,6 @@ nav a {
 
 section {
   margin-top: 88px;
-  padding: 0 24px;
-  max-width: calc(100% - 48px);
 }
 
 .background {
@@ -134,7 +140,6 @@ span {
   text-align: center;
   display: flex;
   flex-direction: column;
-  margin: 20px;
 }
 
 #book-submit > * {
